@@ -17,19 +17,20 @@
 
                 <div class="task-list">
                     <div class="new-task">
-                        <input type="text" placeholder="inserisci nuova cosa da fare" v-model="newTask">
+
+                        <input type="text" placeholder="inserisci nuova cosa da fare" v-model="newTask" @keyup.enter="pushTask">
+
                         <button class="cta" @click="pushTask">
                             <span class="hover-underline-animation">Aggiungi</span>
                             <svg viewBox="0 0 46 16" height="10" width="30" xmlns="http://www.w3.org/2000/svg" id="arrow-horizontal">
                                 <path transform="translate(30)" d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" data-name="Path 10" id="Path_10"></path>
                             </svg>
                         </button>
-                        <!-- <button @click="pushTask">Aggiungi</button> -->
                     </div>
                     
                     <ul>
                         <li v-for="(element, index) in taskList">
-                            <span class="task-text" :class="(element.done != false) ? 'checked':''">{{element.text}}</span>
+                            <span class="task-text" :class="(element.done) ? 'checked':''"  @click="doneUndone(element)">{{element.text}}</span>
                             <i class="fa-solid fa-xmark" @click="remouveTask(index)"></i>
                         </li>
                     </ul>
@@ -43,6 +44,6 @@
 
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-   <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
