@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #00ebad;;
+}
+
+main.big-container {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    max-width: 1170px;
+    height: 100VH;
+}
+
+.container {
+    width: 100%;
+    border: 5px solid #ffb600;
+    border-radius: 15px;
+    background-color: white;
+    font-size: 18px;
+    font-family: sans-serif;
+}
+
+.task-list{
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.task-list ul{
+    list-style: none;
+}
+
+.task-list li{
+    padding: 10px 0;
+    border-bottom: 1px solid #777;
+    display: flex;
+    justify-content: space-between;
+}
+
+.checked{
+    text-decoration: line-through;
+}
